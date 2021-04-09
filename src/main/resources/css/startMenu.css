@@ -1,0 +1,17 @@
+AnchorPane {
+    -fx-background-image: url("background1.jpg");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+}
+
+#button{
+    -fx-background-color: #4CAF50;
+    -fx-border: none;
+    -fx-color: blue;
+    -fx-padding: 15px 32px;
+    -fx-text-align: center;
+    -fx-text-decoration: none;
+    -fx-display: inline-block;
+    -fx-font-size: 16px;
+}
