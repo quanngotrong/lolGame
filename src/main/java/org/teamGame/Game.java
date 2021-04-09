@@ -3,6 +3,7 @@ package org.teamGame;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.teamGame.game.GameManager;
 import org.teamGame.scene.StartScene;
 import org.teamGame.util.Handler;
 
@@ -13,31 +14,15 @@ import java.io.IOException;
  */
 public class Game extends Application {
 
-    private static Scene scene;
-    private static Stage stage;
+    private Scene scene;
+    private Stage stage;
 
-    public static Stage getStage() {
+    public Stage getStage() {
         return stage;
     }
 
-    public static void setStage(Stage stage) {
-        Game.stage = stage;
-    }
-
     private StartScene startScene;
-    private static Handler handler;
-
-    public static Handler getHandler() {
-        return handler;
-    }
-
-    public static Scene getScene() {
-        return scene;
-    }
-
-    public static void setScene(Scene scene) {
-        Game.scene = scene;
-    }
+    private Handler handler;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -48,6 +33,7 @@ public class Game extends Application {
         scene = startScene.getScene();
         stage.setScene(scene);
         stage.show();
+        stage.setResizable(false);
     }
 
     @Override
@@ -66,4 +52,19 @@ public class Game extends Application {
         launch(args);
     }
 
+    public StartScene getStartScene() {
+        return startScene;
+    }
+
+    public void setStartScene(StartScene startScene) {
+        this.startScene = startScene;
+    }
+
+    public Handler getHandler() {
+        return handler;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
 }
